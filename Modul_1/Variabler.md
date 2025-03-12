@@ -1,0 +1,157 @@
+# Modul 1: Variabler i Python
+I dette modul lærer du at arbejde med variabler i Python. Vi gennemgår:
+1. Hvad en variabel er  
+2. Navngivningsregler for variabler  
+3. Typer af data (tal, tekst osv.)  
+4. Eksempler på anvendelse  
+
+---
+
+## 1. Hvad er en variabel?
+En variabel er et navn, du giver til en værdi, så du senere kan hente den eller ændre den i din kode. I Python kan en variabel indeholde alle slags data, f.eks. tekst, tal eller mere komplekse objekter. Python er et dynamisk typet sprog, hvilket betyder, at du ikke skal deklarere typen eksplicit – det finder Python selv ud af.
+
+**Eksempel på oprettelse af en variabel**:
+```python
+navn = "Karin"
+print(navn)  # Udskriver: Karin
+```
+Her har vi givet variablen navn værdien "Karin".
+
+---
+
+## 2. Navngivningsregler
+For at navngive variabler på en god og lovlig måde i Python, bør du følge disse regler:
+1. Må kun indeholde bogstaver (a-z, A-Z), tal (0-9) og underscore (_)
+2. Skal ikke starte med tal (f.eks. 2tal er ugyldigt)
+3. Skriv meningsfulde navne der afspejler indholdet eller formålet
+4. Case-sensitivt: alder og Alder er to forskellige variabler
+
+Gode eksempler:
+```python
+alder = 25
+fornavn = "Søren"
+antal_bøger = 10
+```
+Dårlige eksempler:
+```python
+2test = 5      # Starter med tal -> ugyldigt
+navn#1 = "Hugo" # Ugyldigt tegn -> # 
+```
+---
+## 3. Typer af data
+
+Python håndterer automatisk typen for dig. Du kan dog få vist hvilken type en variabel har, ved at bruge funktionen type():
+
+```python
+# Heltal (int)
+tal = 10
+print(type(tal))  # <class 'int'>
+
+# Komma-tal (float)
+pi = 3.14
+print(type(pi))   # <class 'float'>
+
+# Tekst (str)
+navn = "Sara"
+print(type(navn)) # <class 'str'>
+```
+
+Eksempler på standard datatyper
+1. int (heltal): 42, 0, -5
+2. float (kommatal): 3.14, -0.1
+3. str (tekststreng): "Hej", "Python er sjovt"
+4. bool (sand/falsk): True, False
+5. list (liste med flere værdier): [1, 2, 3], ["a", "b", "c"]
+
+---
+
+## 4. Arbejde med variabler
+###4.1 Tildeling af værdier
+Du tildeler en værdi til en variabel ved at skrive =:
+```python
+alder = 30
+print(alder)  # 30
+
+alder = 35    # ændre værdien af alder
+print(alder)  # 35
+```
+### 4.2 Flere variabler på én gang
+Du kan tildele værdier til flere variabler i én sætning:
+```python
+x, y = 10, 20
+print(x, y)  # 10 20
+```
+### 4.3 Ændring og genbrug
+Når du har tildelt en variabel en værdi, kan den ændres undervejs i koden:
+```python
+status = "Online"
+print(status)        # "Online"
+
+status = "Offline"   # vi ændrer værdien
+print(status)        # "Offline"
+```
+
+---
+
+### 4.4 String-konkatenering og sammensætning
+Hvis du har to tekststrenge, kan du lægge dem sammen med +:
+```python
+fornavn = "Mia"
+efternavn = "Andersen"
+
+fulde_navn = fornavn + " " + efternavn
+print(fulde_navn)  # "Mia Andersen"
+```
+
+### 4.5 Konvertering mellem typer
+Af og til skal du konvertere en datatype til en anden. Fx hvis du vil lave beregninger på noget, der oprindeligt er tekst. Her bruger du de indbyggede konverteringsfunktioner:
+1. str() konverterer til tekst
+2. int() konverterer til heltal
+3. float() konverterer til decimaltal
+
+```python
+tekst_tal = "42"
+print(type(tekst_tal))  # <class 'str'>
+
+rigtigt_tal = int(tekst_tal) 
+print(rigtigt_tal + 1)  # 43
+print(type(rigtigt_tal)) # <class 'int'>
+```
+
+---
+
+### 5. Øvelser
+1. Enkel variabel
+  * Opret en variabel navn og sæt den til dit eget navn.
+  * Opret en variabel alder og sæt den til et tal.
+  * Udskriv: "Mit navn er ... og jeg er ... år gammel."
+
+2. Skift værdi
+  * Opret en variabel status = "Online".
+  * Udskriv status.
+  * Opdater variablen til "Away" og udskriv igen.
+
+3. Konverter data
+  * Opret en variabel tekst_tal = "3.14".
+  * Konverter den til float og læg 1 til.
+  * Udskriv resultatet (forventet 4.14).
+
+4. To variabler, en linje
+  * Skriv a, b = 5, 10.
+  * Udskriv summen af a og b.
+
+5. Kreativ udfordring
+  * Lav variabler: fornavn, efternavn, favorite_number.
+  * Kombinér dem i en udskrift, f.eks. "Jeg hedder X Y og mit yndlingstal er Z.".
+
+God fornøjelse!
+
+---
+
+## 6. Opsummering
+Du har nu fået indsigt i:
+* Hvad variabler er, og hvordan de tildeles og navngives.
+* De mest almindelige datatyper i Python.
+* Hvordan du kan ændre og konvertere værdier.
+
+I næste modul vil vi kigge på kontrolstrukturer (ifsætninger, loops og funktioner), så du kan skrive mere dynamiske programmer.
