@@ -1,4 +1,4 @@
-Modul 4: Databehandling med Pandas (Analyse og bearbejdning af data)
+# Modul 4: Databehandling med Pandas (Analyse og bearbejdning af data)
 Formål: Introducere dig til Pandas-biblioteket, som er et af de mest udbredte værktøjer til databehandling i Python.
 - Indhold:
     - Installation og import: pip install pandas, samt import pandas as pd.
