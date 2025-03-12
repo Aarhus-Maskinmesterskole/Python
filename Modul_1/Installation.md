@@ -1,0 +1,91 @@
+# Installation af Python og Visual Studio Code
+
+Følg nedenstående trin for at installere de nødvendige værktøjer til at arbejde med Python-kode i Visual Studio Code (VS Code).
+
+---
+
+## 1. Installer Python
+
+1. **Gå til [python.org/downloads](https://www.python.org/downloads/)**
+   - Vælg den nyeste version af Python (fx 3.x.x).
+2. **Download installationsfilen** og kør den.
+   - **Windows**: Sørg for at markere **"Add Python to PATH"** ved installationen, så du kan køre Python fra kommandolinjen.
+   - **macOS**: Kør .pkg-filen og følg anvisningerne.
+   - **Linux**: Ofte er Python 3 allerede installeret. Ellers kan du installere via din pakkehåndtering, fx `sudo apt-get install python3`.
+
+3. **Kontrollér installation**  
+   - Åbn en terminal (eller kommandoprompt):
+     ```bash
+     python --version
+     ```
+   - Du burde se et versionsnummer for Python 3 (fx `Python 3.10.7`).
+
+> **Tip:** Hvis du kører Windows og `python`-kommandoen ikke virker, så prøv `py --version`. Mac-brugere kan evt. være nødt til at skrive `python3`.
+
+---
+
+## 2. Installer Visual Studio Code
+
+1. **Gå til [code.visualstudio.com](https://code.visualstudio.com/)** og klik "**Download**".
+2. **Kør installationsfilen** og følg anvisningerne:
+   - **Windows**:  
+     - Sæt evt. flueben ved "**Add to PATH**", hvis du ønsker at åbne VS Code fra kommandolinjen.
+   - **macOS**:  
+     - Træk `Visual Studio Code.app` over i din `Programmer`-mappe.
+   - **Linux**:  
+     - Følg instruktionerne for din distribution (Debian, Ubuntu, Fedora osv.).
+
+3. **Åbn Visual Studio Code** for at bekræfte, at installationen fungerer.
+
+---
+
+## 3. Installer Python-udvidelsen i VS Code
+
+1. **Åbn Visual Studio Code**.
+2. **Klik på "Extensions"** (ikonet der ligner 4 kasser i venstre side) eller tryk `Ctrl+Shift+X` (Windows) / `Cmd+Shift+X` (macOS).
+3. Søg efter "**Python**" (den officielle fra Microsoft).
+4. Klik "**Install**".
+
+Når Python-udvidelsen er installeret:
+- Får du syntax highlighting, IntelliSense, debugging og kørsel af Python-kode direkte i VS Code.
+
+---
+
+## 4. Opsætning af projekt
+1. **Opret en mappe** til dine Python-projekter. Fx `python-projekter/`.
+2. **Åbn mappen** i VS Code:
+   - **File > Open Folder** (Windows og Linux)  
+   - **File > Open** (macOS), og vælg mappen.
+3. **Opret en fil** i mappen, fx `hello.py`.
+4. **Skriv lidt Python-kode**:
+   ```python
+   print("Hello from Python in VS Code!")
+5. Kør din kode i terminalen
+1. Åbn en terminal i VS Code (View > Terminal).
+2. Skriv:
+   ```python
+   python hello.py
+   ```
+   Du burde se Hello from Python in VS Code! i terminalen.
+
+---
+
+## 5. Test at alt virker
+1. Kontrollér at din Python-version stemmer overens med den, du installerede.
+2. Prøv at installere et Python-bibliotek, fx requests:
+   ```python
+   pip install requests
+   ```
+   og importer det i din kode:
+   ```python
+    import requests
+
+    response = requests.get("https://www.python.org")
+    print(response.status_code)
+   ```
+    Hvis der ikke opstår fejl, er Python og VS Code sat korrekt op.
+
+---
+
+## 6. Klar til kurset
+Nu hvor Python og Visual Studio Code er installeret, og du kan køre Python-kode uden problemer, er du klar til at følge kursets moduler. God fornøjelse!
