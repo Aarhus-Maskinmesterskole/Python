@@ -65,3 +65,9 @@ Vi sætter pris på alle input til at gøre materialet endnu bedre.
 2. NumPy-dokumentation
 3. Pandas-dokumentation
 4. Matplotlib-dokumentation
+   
+---
+
+# Vedligeholdes af underviserne
+- ASO
+- ABR
