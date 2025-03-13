@@ -17,7 +17,7 @@ Forløbet er opdelt i seks moduler, der gradvist opbygger dine færdigheder:
 |Modul|	Emne|	Indhold|
 |-----|-----|--------|
 |1|Kom godt i gang med Python|	Installation, variabler, datatyper, syntaks og skrive scripts|
-|2|	Kontrolstrukturer|	Betingelser, loops og funktioner|
+|2|	Kontrolstrukturer|	Betingelser, loops, funktioner og klasser|
 |3|	Datahåndtering i Python|	Lister, dictionaries, filhåndtering, grundlæggende projekter|
 |4|	Databehandling med Pandas|	Analyse og bearbejdning af data|
 |5|	Datavisualisering med Matplotlib|	Plot og grafer til at skabe overblik over data|
