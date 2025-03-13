@@ -69,5 +69,5 @@ Vi sætter pris på alle input til at gøre materialet endnu bedre.
 ---
 
 # Vedligeholdes af underviserne
-- ASO
-- ABR
+- ASO (aso@aams.dk)
+- ABR (abr@aams.dk)
