@@ -4,7 +4,7 @@
 Lær at styre flowet i dine programmer og gør din kode mere dynamisk og fleksibel.  
 
 ## 📌 Indhold  
-🔹 **If-sætninger og logiske betingelser** – Forstå hvordan `if`, `elif` og `else` bruges til at træffe beslutninger i din kode.  
+🔹 **If-sætninger og logiske betingelser** – Forstå hvordan `if`, `elif` og `else` bruges til at træffe                 beslutninger i din kode.  
 🔹 **Loops** – Brug `for`-løkker, `while`-løkker og `range()` til at gentage handlinger effektivt.  
 🔹 **Funktioner** – Lær at definere og anvende funktioner, herunder parametre og returneringsværdier.  
 
