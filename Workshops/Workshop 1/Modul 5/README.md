@@ -14,8 +14,8 @@ Velkommen til Modul 5! I dette modul lærer du at visualisere data, så du lette
 ✅ Tegne enkle diagrammer: linjeplot, barplot, scatterplot.
 ✅ Styling og labels: Tilføj titler, aksebeskrivelser og farver.
 ✅ Kombinér med Pandas: Brug df.plot() til hurtige visualiseringer.
-🛠 Hvad skal du bruge?
 
+## 🛠 Hvad skal du bruge?
 Installer Matplotlib med følgende kommando:
 ```bash
 pip install matplotlib
