@@ -1,7 +1,7 @@
 # **Modul 5: Datavisualisering med Matplotlib 📊📈**  
 
 ## 🎯 Formål  
-Lær at visualisere data, så du lettere kan spotte mønstre og resultater i dine analyser.  
+Velkommen til Modul 5! I dette modul lærer du at visualisere data, så du lettere kan spotte mønstre og resultater.
 
 ## 📌 Indhold  
 - 🔹 **Opsætning af Matplotlib** – Kom i gang med `import matplotlib.pyplot as plt`.  
@@ -9,6 +9,21 @@ Lær at visualisere data, så du lettere kan spotte mønstre og resultater i din
 - 🔹 **Styling og labels** – Tilføj titler, aksebeskrivelser og farver for at gøre dine plots mere informative.  
 - 🔹 **Kombinér med Pandas** – Brug `df.plot()` til hurtige og effektive visualiseringer af datasæt.  
 
+## 📌 Hvad vil du lære?
+✅ Opsætning af Matplotlib: import matplotlib.pyplot as plt.
+✅ Tegne enkle diagrammer: linjeplot, barplot, scatterplot.
+✅ Styling og labels: Tilføj titler, aksebeskrivelser og farver.
+✅ Kombinér med Pandas: Brug df.plot() til hurtige visualiseringer.
+🛠 Hvad skal du bruge?
+
+Installer Matplotlib med følgende kommando:
+```bash
+pip install matplotlib
+```
+Hvis du vil kombinere Matplotlib med Pandas, skal du også installere Pandas:
+```bash
+pip install pandas
+```
 ## 🎯 Mål  
 Efter dette modul vil du kunne:  
 ✅ Oprette og tilpasse grafer i Python med Matplotlib.  
