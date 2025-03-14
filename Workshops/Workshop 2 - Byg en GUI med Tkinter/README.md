@@ -2,7 +2,7 @@
 Velkommen til Workshop 2, hvor vi dykker ned i udviklingen af grafiske brugergrænseflader (GUI) i Python ved hjælp af Tkinter. Dette kursus er opdelt i flere moduler, der guider dig fra grundlæggende installation til avancerede funktioner.
 
 ## 📌 Moduloversigt:
-####🔰 Modul 1: Installation og opsætning
+#### 🔰 Modul 1: Installation og opsætning
 - ✅ Hvad er Tkinter, og hvorfor bruge det?✅ Installation og opsætning af dit udviklingsmiljø✅ Oprettelse af dit første Tkinter-vindue
 
 🎨 Modul 2: Grundlæggende Widgets
