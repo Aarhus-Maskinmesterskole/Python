@@ -10,6 +10,22 @@ Dette modul hjælper dig med at forstå de grundlæggende byggesten i Python, s�
 - ✅ De første skridt i Python-syntaks: variabler, datatyper (int, float, str, bool, list osv.).
 - ✅ At skrive og eksekvere simple Python-scripts fra terminalen/VS Code.
 
+## 🛠 Hvad skal du bruge?
+For at komme i gang skal du installere Python:
+
+Windows (Chocolatey):
+```bash
+choco install python
+```
+Mac (Homebrew):
+```bash
+brew install python
+```
+Linux (Debian/Ubuntu):
+```bash
+sudo apt install python3
+```
+
 ## 📂 Indhold
 - 📄 1.1 Installation – Sådan installerer du Python og sætter dit udviklingsmiljø op.
 - 📄 1.2 Variabler – Hvad er variabler, og hvordan bruges de i Python?
