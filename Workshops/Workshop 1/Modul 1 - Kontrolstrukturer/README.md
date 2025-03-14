@@ -1,4 +1,4 @@
-Modul 1: Kom godt i gang med Python 🚀
+# Modul 1: Kom godt i gang med Python 🚀
 
 Velkommen til Modul 1, hvor vi tager de første skridt ind i Python-verdenen! Uanset om du er nybegynder eller har lidt erfaring, vil dette modul give dig et solidt fundament.
 🎯 Formål
@@ -11,9 +11,9 @@ Dette modul hjælper dig med at forstå de grundlæggende byggesten i Python, s�
 ✅ At skrive og eksekvere simple Python-scripts fra terminalen/VS Code.
 📂 Indhold
 
-    📄 1.1 Installation – Sådan installerer du Python og sætter dit udviklingsmiljø op.
-    📄 1.2 Variabler – Hvad er variabler, og hvordan bruges de i Python?
-    📄 1.3 Datatyper – De vigtigste datatyper i Python og deres anvendelse.
+- 📄 1.1 Installation – Sådan installerer du Python og sætter dit udviklingsmiljø op.
+- 📄 1.2 Variabler – Hvad er variabler, og hvordan bruges de i Python?
+- 📄 1.3 Datatyper – De vigtigste datatyper i Python og deres anvendelse.
 
 🎯 Mål
 
