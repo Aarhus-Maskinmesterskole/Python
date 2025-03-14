@@ -1,0 +1,102 @@
+# 📊 **5.5 Histogrammer i Matplotlib**  
+
+Histogrammer bruges til at **vise fordelingen af numeriske data**.  
+I dette modul lærer du at **oprette, tilpasse og analysere histogrammer** i Matplotlib.  
+
+> **Mål for dette modul:**  
+> ✅ Oprette histogrammer med `plt.hist()`  
+> ✅ Tilpasse antal bins og farver  
+> ✅ Forstå hvordan histogrammer viser datadistribution  
+
+---
+
+## 📌 **1. Hvad er et histogram?**  
+
+Et histogram opdeler **numeriske data i intervaller (bins)** og viser, hvor mange observationer der falder i hvert interval.  
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Opret tilfældige data
+data = np.random.randn(1000)  # 1000 tilfældige tal
+
+# Opret histogram
+plt.hist(data, bins=20, color="blue", edgecolor="black")
+
+# Tilføj labels og titel
+plt.title("Fordeling af data")
+plt.xlabel("Værdi")
+plt.ylabel("Frekvens")
+
+plt.show()
+```
+
+📌 **Output:** Et histogram, der viser **fordelingen af data**.
+
+---
+
+## 🎨 **2. Tilpasning af histogrammer**  
+
+Matplotlib giver mulighed for **tilpasning af bins, farver og gennemsnitslinjer**.  
+
+| Parameter | Funktion | Eksempel |
+|------------|----------|----------|
+| `bins` | Antal intervaller | `bins=30` |
+| `color` | Farve på søjler | `color="green"` |
+| `edgecolor` | Kantfarve på søjler | `edgecolor="black"` |
+| `alpha` | Gennemsigtighed | `alpha=0.7` |
+
+```python
+plt.hist(data, bins=30, color="green", edgecolor="black", alpha=0.7)
+plt.title("Tilpasset histogram")
+plt.show()
+```
+
+📌 **Output:** Et histogram med **30 bins og gennemsigtighed**.
+
+---
+
+## 🔄 **3. Histogram med gennemsnitslinje**  
+
+```python
+mean_value = np.mean(data)
+
+plt.hist(data, bins=20, color="blue", edgecolor="black", alpha=0.7)
+plt.axvline(mean_value, color="red", linestyle="dashed", linewidth=2, label="Gennemsnit")
+
+plt.legend()
+plt.title("Histogram med gennemsnitslinje")
+
+plt.show()
+```
+
+📌 **Output:** Histogram med en rød streg for **gennemsnittet**.
+
+---
+
+## 🎯 **4. Øvelser**  
+
+### 1️⃣ **Grundlæggende histogram**  
+- Opret et histogram med 1000 tilfældige værdier.  
+
+### 2️⃣ **Tilpas histogrammet**  
+- Ændr farver, bins og tilføj en gennemsnitslinje.  
+
+### 3️⃣ **Analyser en virkelig dataset**  
+- Brug Pandas til at indlæse en CSV-fil og visualiser en numerisk kolonne med et histogram.  
+
+### 🔥 **Bonusudfordring**  
+- Brug `np.random.normal()` til at generere en normalfordeling og visualiser den.  
+
+---
+
+## 🚀 **5. Opsummering**  
+✔ **Histogrammer bruges til at vise fordelingen af numeriske data**  
+✔ **Brug `plt.hist()` til at lave et histogram**  
+✔ **Tilpas antal bins og farver for bedre læsbarhed**  
+✔ **Brug `axvline()` til at vise gennemsnit eller andre markører**  
+
+**📌 Videre til næste modul: [5.6 - Scatterplots](5.6-Scatterplots.md)**  
+
+God fornøjelse med histogrammer i Matplotlib! 📊🐍  
