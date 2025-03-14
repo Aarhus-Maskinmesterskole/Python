@@ -3,7 +3,7 @@ Velkommen til Workshop 2, hvor vi dykker ned i udviklingen af grafiske brugergr�
 
 ## 📌 Moduloversigt:
 #### 🔰 Modul 1: Installation og opsætning
-- ✅ Hvad er Tkinter, og hvorfor bruge det?✅ Installation og opsætning af dit udviklingsmiljø✅ Oprettelse af dit første Tkinter-vindue
+✅ Hvad er Tkinter, og hvorfor bruge det?✅ Installation og opsætning af dit udviklingsmiljø✅ Oprettelse af dit første Tkinter-vindue
 
 🎨 Modul 2: Grundlæggende Widgets
 ✅ Brug af Labels, Knapper og Tekstfelter✅ Placering af widgets med pack(), grid() og place()✅ Grundlæggende hændelser og command-funktioner
