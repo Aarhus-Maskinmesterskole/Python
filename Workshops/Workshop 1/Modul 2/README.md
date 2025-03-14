@@ -1,4 +1,4 @@
-# **⚡ Modul 2: Kontrolstrukturer **
+# **⚡ Modul 2: Kontrolstrukturer**
 
 ## 🎯 Formål  
 Velkommen til Modul 2! I dette modul lærer du at styre flowet i dine programmer og gøre din kode mere fleksibel og dynamisk.
