@@ -1,6 +1,4 @@
-# 01-introduction.md
-
-## 🎥 Introduktion til Rockwell PLC-kommunikation
+# 🎥 Introduktion til Rockwell PLC-kommunikation
 
 I denne workshop introduceres du til, hvordan du opretter forbindelse mellem en Rockwell PLC (CompactLogix eller ControlLogix) og Python ved hjælp af biblioteket `pylogix`. Dette er en vigtig færdighed, hvis du vil bygge bro mellem industrielle styringer og databehandling i Python.
 
