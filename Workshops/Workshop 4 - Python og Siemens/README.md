@@ -39,11 +39,11 @@ Denne workshop lærer dig at tale med en **Siemens S7-PLC** fra **Python** via `
 
 ### 💻 Software (ingen PLC påkrævet)
 
-✅ **Windows 10/11**
-✅ **Python 3.12+**
-✅ **Visual Studio Code** (Extensions: *Python*, *Pylance*)
-✅ **python-snap7**
-✅ *(Valgfrit, først til sidst)* Siemens **TIA Portal** og adgang til en test-PLC
+✅ **Windows 10/11**  
+✅ **Python 3.12+**  
+✅ **Visual Studio Code** (Extensions: *Python*, *Pylance*)  
+✅ **python-snap7**  
+✅ *(Valgfrit, først til sidst)* Siemens **TIA Portal** og adgang til en simuleret-PLC  
 
 ---
 
