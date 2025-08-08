@@ -6,8 +6,6 @@
 **Forventet tid:** 60–90 min.
 **Forudsætninger:** 01 (opsætning), 02 (widgets & layout), 03 (input & validering).
 
-> **Filer (forslag):** `04a_frames.py`, `04b_nested_grid.py`, `04c_notebook.py`, `04d_dynamic_sections.py`
-
 ---
 
 ## 🪜 Step 0 — Grundskabelon (kopiér én gang)
