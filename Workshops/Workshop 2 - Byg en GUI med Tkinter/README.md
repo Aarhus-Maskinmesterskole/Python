@@ -37,7 +37,7 @@ Velkommen til Workshop 2, hvor vi dykker ned i udviklingen af grafiske brugergr�
 - ✅ Integration af GUI med en database (SQLite)
 - ✅ Dynamisk datahåndtering i Tkinter
 
-🏆 Modul 8: Ekspertprojekter i Tkinter
+### 🏆 Modul 8: Ekspertprojekter i Tkinter
 - ✅ Byg en To-Do liste-app med Tkinter
 - ✅ Udvikling af en simpel lommeregner
 - ✅ Opret et komplet CRUD-system med Tkinter og SQLite
