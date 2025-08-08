@@ -343,9 +343,3 @@ ttk.Button(bar, text="Slet", command=delete).pack(side="right", padx=(0,8))
 * Ét af sporene A/B/C er **færdigt** efter kravene.
 * Ingen tracebacks ved almindelig brug; fejl håndteres pænt.
 * UI’et skalerer fornuftigt; primære flows kan betjenes med tastatur.
-
----
-
-## ⏭️ Hvad så nu?
-
-Vil du have **pakning til .exe** (fx med `pyinstaller`) eller en **lille style-overhaling** (ttk.Style temaer, primær knap osv.) som bonus-modul **09**? Siger du bare til, så laver jeg næste skridt.
