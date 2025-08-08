@@ -6,8 +6,6 @@
 **Forventet tid:** 60–90 min.
 **Forudsætninger:** 01 er gennemført (opsætning), 02 er gennemført (widgets & layout).
 
-> **Filnavn (forslag):** `03a_form_skelet.py`, `03b_validering.py`, `03c_live_validering.py` …
-
 ---
 
 ## 🪜 Step 0 — Grundskabelon (kopiér én gang)
