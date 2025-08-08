@@ -1,123 +1,124 @@
-# **01 – Introduktion & opsætning** (Tkinter · Windows + VS Code)
+# **01 – Introduktion & opsætning**
 
-> **Formål:** Dette modul gør dig klar til at arbejde med grafiske brugerflader i Python med **Tkinter**. Vi afklarer begreber, forventninger og arbejdsgang i **Windows + VS Code**. **Ingen kode** i dette modul — selve installationstrin ligger i `installation.md`.
+*(Tkinter · Windows + VS Code · **ingen kode** i dette modul)*
 
----
+## 👋 Velkommen
 
-## Velkommen
-
-Modul 01 er din bløde indflyvning til GUI-udvikling i Python. Du får overblik over, hvad Tkinter er, hvordan et GUI-program “lever” (event-loop), og hvordan vi strukturerer resten af workshoppen. Du afslutter modulet med en klar tjekliste, så du ved, at alt er klar til Modul 02.
+Modul **01** er din rolige indflyvning til **GUI i Python med Tkinter**. Vi går **trin for trin**, så alle kan være med — og vi rører **ikke** ved kode endnu. Målet er, at du efter modulet trygt kan fortsætte til næste modul, hvor vi bygger dit første vindue.
 
 ---
 
-## Hvad er Tkinter — kort fortalt
+## 🎯 Hvad går modul 01 ud på?
 
-* **Tkinter** er Pythons standardbibliotek til GUI (følger med Python-installationen).
-* Styrker: hurtigt at komme i gang, ingen ekstra pakker, godt til undervisning & små værktøjer.
-* Fokus i workshoppen: forstå **widgets** (knapper, labels, felter), **layout** (pack, grid, place) og **events** (hændelser) — så du kan bygge små, robuste apps.
+* Forstå **hvad Tkinter er**, og hvornår det er et godt valg.
+* Få styr på **arbejdsgang i VS Code på Windows** (uden kommandolinjemagi).
+* Lære de **grundbegreber**, vi bruger resten af workshoppen: *widget, layout, event, event-loop*.
+* Tjekke at **dit miljø** er klar (detaljer i `installation.md`).
 
----
-
-## Formål med Modul 01
-
-* Give dig et **mentalt kort** over GUI-begreber (widgets, layout, events, event-loop).
-* Afklare **arbejdsgang i VS Code** på Windows (uden at gå i detaljer med kommandoer her).
-* Sikre at du ved præcis, hvad der skal være på plads, **før** du skriver den første linje kode i Modul 02.
+> **Kort sagt:** Du får sprog, overblik og et klart *to-do* til din opsætning — *før* vi begynder at kode.
 
 ---
 
-## Læringsmål (efter dette modul kan du…)
+## 🗺️ Overblik over vejen frem
 
-* beskrive, hvad **Tkinter** er, og hvornår det er et godt valg,
-* forklare forskellen på **widgets** og **layout-systemer** (pack, grid, place) på et overordnet niveau,
-* forklare, hvad **event-loopet** gør i en GUI,
-* redegøre for den anbefalede **arbejdsgang i VS Code** (vælge fortolker, arbejde i projektmappe/venv),
-* krydse tjeklisten af, så du er klar til at kode i Modul 02.
-
----
-
-## Målgruppe & forudsætninger
-
-* **Målgruppe:** Studerende/undervisningsdeltagere uden tidligere GUI-erfaring.
-* **Forudsætninger:**
-
-  * Windows 10/11
-  * Python 3.12+ installeret
-  * Visual Studio Code med udvidelserne **Python** og **Pylance**
-  * Basal Python (variabler, funktioner, simpel kontrolflow)
-* **Ikke nødvendigt:** Git, GitHub, ekstern hardware, eller eksterne Python-pakker.
-
-> **Praktisk:** Alle konkrete installations- og kontroltrin findes i `installation.md`.
+* **01 – Introduktion & opsætning** (denne) → begreber + klar miljøtjek
+* **02 – Widgets & layout** → første vindue, labels/knapper/entry, pack vs. grid
+* **03 – Input & validering** → brugerinput, feedback & simple regler
+* … og videre til menuer, dialoger, data m.m.
 
 ---
 
-## Indhold i Modul 01
+## 🧠 Nøglebegreber (uden kode)
 
-1. **Kort intro til Tkinter**: hvad, hvorfor og typiske anvendelser.
-2. **GUI-grundbegreber** *(konceptuelt)*
+* **GUI**: *Graphical User Interface* — vinduer, knapper, felter m.m.
+* **Tkinter**: Pythons **standard** GUI-bibliotek (følger med Python).
+* **Widget**: en byggesten i UI (fx **Label**, **Button**, **Entry**, **Text**, **Frame**).
+* **Layout**: hvordan widgets placeres:
 
-   * **Widgets**: byggeklodserne (labels, knapper, tekstfelter).
-   * **Layout**: principper bag pack, grid og place — hvornår hvad giver mening.
-   * **Events & event-loop**: hvorfor en GUI “lever”, og hvordan app’en reagerer på brugeren.
-3. **Arbejdsgang i VS Code** *(konceptuelt)*
-
-   * Projektmappe pr. modul/forløb.
-   * Vælg den **rigtige Python-fortolker** (din `.venv`).
-   * Kørsel og terminal i VS Code — uden kommandoer her, se `installation.md`.
-4. **Kvalitetskriterier inden du koder**
-
-   * Fortolker valgt i VS Code (peger på `.venv`).
-   * Tkinter er tilgængelig (verificeres efter `installation.md`).
-   * Du kan forklare widgets/layout/event-loop med dine egne ord.
+  * **pack** ➜ enkel stabling (op/ned/venstre/højre)
+  * **grid** ➜ rækker/kolonner (*mest fleksibel til formularer*)
+  * **place** ➜ faste koordinater (*brug sjældent*)
+* **Event**: en hændelse (klik, tast, ændring).
+* **Event-loop**: “hjertet” der holder vinduet i live og reagerer på events.
+* *(Teaser til næste modul)* **Entry** = ét-linjes tekstfelt · **Text** = flersidet tekst · **Canvas** = tegneflade · **ttk** = pænere, tema-baserede widgets.
 
 ---
 
-## Mini-heuristik for gode GUI’er (uden kode)
+## 🧰 Krav og forudsætninger
 
-* **Klar tekst:** sig hvad felter og knapper gør.
-* **Konsistens:** samme afstande, samme skrifter, samme tone.
-* **Fokus & flow:** Tab-rækkefølge giver mening; Enter/Escape-adfærd overvejes.
-* **Feedback:** viser tydeligt “succes/fejl/busy”.
-* **En skærm — ét formål:** undgå at proppes for meget ind i ét vindue.
-* **Tilgængelighed light:** kontrast, fontstørrelse og synligt fokusfelt.
-
----
-
-## Kendte faldgruber (godt at vide fra start)
-
-* **Bland ikke** `pack` og `grid` i **samme** container (samme parent-frame).
-* **Blokér ikke** event-loopet med lange beregninger (GUI “fryser”).
-* **Skærmskalering/DPI** kan påvirke layout — test i forskellige vinduesstørrelser.
-* `Toplevel` (sekundært vindue) **≠** `Tk` (hovedvinduet).
+* **Windows 10/11**
+* **Python 3.12+**
+* **Visual Studio Code** + udvidelserne **Python** og **Pylance**
+* Let kendskab til Python (variabler, funktioner, `if`/`else`)
+* **Ingen** Git/GitHub, ingen hardware — *kun Python på din PC*
 
 ---
 
-## Tjekliste før du går videre
+## 🪜 Step-by-step (uden kode)
 
-* [ ] Python 3.12+ og VS Code installeret
+> **Alle praktiske detaljer (screenshots/kommandoer) ligger i `installation.md`.**
+> Her får du kun *hvad* du skal gøre og *i hvilken rækkefølge*.
+
+**Step 1 — Installer værktøjer** ✅
+
+* Python 3.12+ (Microsoft Store eller python.org)
+* VS Code + udvidelserne *Python* & *Pylance*
+
+**Step 2 — Opret din kursusmappe** 🗂️
+
+* Fx `C:\Users\<dig>\Documents\tkinter-workshop`
+* Åbn mappen i VS Code (**File → Open Folder…**)
+
+**Step 3 — Forbered projektet i VS Code** 🧪
+
+* Opret et **virtuelt miljø** (`.venv`)
+* Vælg **.venv** som Python-fortolker i statuslinjen nederst i VS Code
+
+**Step 4 — Tjek at Tkinter er klar** 🩺
+
+* Følg mini-testen i `installation.md` (hurtigt check for Tk/Tcl)
+
+**Step 5 — Klar til næste modul** 🟢
+
+* Du ved, hvad *widget/layout/event/event-loop* betyder
+* Dit miljø er klar → videre til **02 – Widgets & layout**
+
+---
+
+## ✅ Tjekliste (før du går videre)
+
+* [ ] Python 3.12+ og VS Code er installeret
 * [ ] Udvidelserne **Python** og **Pylance** er aktive i VS Code
-* [ ] Projektmappe oprettet og åbnet i VS Code
-* [ ] `.venv` oprettet og valgt som fortolker i VS Code
-* [ ] Tkinter verificeret (se `installation.md`)
-* [ ] Jeg kan forklare: *widget*, *layout (pack/grid/place)*, *event*, *event-loop*
+* [ ] Projektmappen er oprettet og åbnet i VS Code
+* [ ] **.venv** er oprettet **og valgt** som fortolker i VS Code
+* [ ] Tkinter-tjekket i `installation.md` kører igennem
+* [ ] Jeg kan med egne ord forklare: *widget*, *layout (pack/grid/place)*, *event*, *event-loop*
 
 ---
 
-## Definition of Done (Modul 01)
+## 🧭 Kvalitetskriterier (DoD for 01)
 
-* Du har læst og forstået modulbeskrivelsen og begreberne.
-* Dit Windows/VS Code-miljø er klar (verificeret via `installation.md`).
-* Du er klar til at oprette den første Tkinter-fil i **02 – Grundlæggende widgets & layout**.
-
----
-
-## Tid & leverancer
-
-* **Estimeret tid:** 45–60 min.
-* **Leverance:** Afkrydset tjekliste og kort refleksion (3–5 linjer) om, hvad du forventer at få ud af Tkinter, og hvilke begreber du vil holde ekstra øje med i næste modul.
+* Miljøet er verificeret (*alt grønt* i din egen tjekliste).
+* Begreberne ovenfor giver mening for dig.
+* Du føler dig tryg ved at åbne en **tom Python-fil** i næste modul og begynde at placere widgets.
 
 ---
 
-## Videre til **02 – Grundlæggende widgets & layout**
+## ✍️ Refleksion (3–5 linjer)
 
-I næste modul åbner du dit første vindue, placerer dine første widgets og arbejder med begivenheder og layout i praksis — trin for trin.
+* Hvornår giver en **GUI** mere mening end en kommandolinje?
+* Hvorfor ville du vælge **grid** frem for **pack** i en formular?
+* Hvilke to begreber vil du holde ekstra øje med i **02**?
+
+---
+
+## 🆘 Hvis noget driller
+
+* Kig i **`installation.md` → Fejlsøgning** (PowerShell-politik, fortolker-valg, Tkinter-check).
+* Stadig problemer? Notér præcis fejltekst og hvor i processen den opstår — så er det hurtigt at hjælpe dig videre.
+
+---
+
+## 🚀 Næste skridt: **02 – Widgets & layout**
+
+Her bygger vi dit første vindue **med små, tydelige snippets**: *Label*, *Button*, *Entry*, *Text*, *pack vs. grid*, events og feedback. Klar? 💪
