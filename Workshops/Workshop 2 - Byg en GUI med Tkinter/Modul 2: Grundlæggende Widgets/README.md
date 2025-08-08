@@ -4,8 +4,6 @@
 **Forventet tid:** 60–90 min.
 **Forudsætninger:** 01 er gennemført, og du har et tomt projekt i VS Code med `.venv`.
 
-> **Filnavn, forslag:** `02a_hello_gui.py` – du kan lave nye filer for hvert step: `02b_entry.py`, `02c_grid.py`, osv.
-
 ---
 
 ## Step 0 — Grundskabelon (startfil)
