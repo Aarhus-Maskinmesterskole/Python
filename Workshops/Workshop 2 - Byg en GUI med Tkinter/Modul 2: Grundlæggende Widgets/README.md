@@ -1,148 +1,245 @@
-# **02 – Grundlæggende widgets & layout**
+# **02-widgets-og-layout** *(step-by-step, Windows + VS Code)*
 
-*(Tkinter · Windows + VS Code — ingen kode i dette dokument)*
+**Mål:** Lær de mest brugte widgets i Tkinter (Label, Button, Entry, Text, Check/Radios/Dropdown), og hvordan du placerer dem med `pack` og `grid`.
+**Forventet tid:** 60–90 min.
+**Forudsætninger:** 01 er gennemført, og du har et tomt projekt i VS Code med `.venv`.
 
-## Overblik
-
-I Modul 02 går vi fra begreber til praksis — stadig **uden at vise kode her**. Du lærer, hvad de mest brugte **widgets** gør (Label, Button, Entry, Text m.fl.), hvordan de placeres med **pack / grid / place**, og hvordan **command** og simple **events** binder UI sammen med logik.
-
-**Målet** er, at du efter modulet kan planlægge og beskrive en lille GUI med korrekt layout og brugerflow — klar til at implementere i næste modul.
+> **Filnavn, forslag:** `02a_hello_gui.py` – du kan lave nye filer for hvert step: `02b_entry.py`, `02c_grid.py`, osv.
 
 ---
 
-## Forudsætninger
+## Step 0 — Grundskabelon (startfil)
 
-* Modul **01 – Introduktion & opsætning** er gennemført (Python 3.12+, VS Code, `.venv`, Tkinter verificeret).
-* Basal Python: variabler, funktioner, `if/elif/else`.
+Kopier dette **én gang** i toppen af din fil. Alle næste snippets kan sættes ind **efter** kommentaren, hvor det giver mening.
 
----
+```python
+import tkinter as tk
+from tkinter import ttk
 
-## Læringsmål (efter dette modul kan du…)
+root = tk.Tk()
+root.title("Tkinter – 02")
+root.geometry("360x220")  # bredde x højde
 
-* identificere og forklare formålet med **Label**, **Button**, **Entry**, **Text**, **Checkbutton**, **Radiobutton**, **OptionMenu** (ttk-varianter hvor det giver mening),
-* vælge et passende **layout-system** (pack, grid eller place) til en given skærm,
-* beskrive **command** (på knapper/menupunkter) og simple **events** (fx Enter-tast),
-* skitsere et vindue med felter, knapper og feedback-områder, inkl. hvordan det **skalerer** ved resize,
-* planlægge **validering** af brugerinput (hvad er lovligt/ulovligt, og hvordan vises fejl tydeligt).
+# --- tilføj dine widgets under denne linje ---
 
----
-
-## Indhold
-
-1. **Widgets – byggeklodser**
-
-   * **Label** (tekst/feedback), **Button** (handling), **Entry** (enkelt linje), **Text** (flere linjer)
-   * **Checkbutton/Radiobutton** (valg), **OptionMenu/Combobox** (dropdown)
-   * **StringVar/IntVar/BooleanVar** til at binde data mellem UI og “model”
-   * **ttk**-widgets for et mere konsistent look
-
-2. **Layout – placering og skalering**
-
-   * **pack**: simpelt, lodret/vandret stabling
-   * **grid**: rækker/kolonner, fleksibel skalering via `row/columnconfigure`
-   * **place**: absolut placering (sjældent det rigtige valg)
-   * Grundregel: **Bland ikke pack og grid i samme container**
-
-3. **Adfærd – at gøre UI levende**
-
-   * **command**: Button → funktion
-   * **events**: fx Enter-tast i et Entry-felt, ændring i en variabel → opdater label
-   * **feedback**: tydelig succes/fejl, statusfelt i bunden (label)
-
-4. **UX-rammer for små værktøjer**
-
-   * Én skærm → ét primært formål
-   * Tydelige labels og felter, fornuftig **Tab-rækkefølge**
-   * Validering tæt på feltet, **ikke** som pop-up, når det kan undgås
-   * Skalerbarhed: felter der må vokse, vokser; tekster brydes pænt
+root.mainloop()
+```
 
 ---
 
-## Øvelser (uden kode – planlægning & specifikation)
+## Step 1 — Label + Button (første interaktion)
 
-> Brug disse som **design-briefs**. I næste modul implementeres de.
+**Hvad er det?**
 
-### Øvelse A — “Sig hej”-vindue (starter)
+* **Label** viser tekst.
+* **Button** udfører en funktion via `command=`.
+* **StringVar** er en lille “databeholder” som binder data til widgets.
 
-**Formål:** Grundlæggende widgets + feedback.
-**Krav (beskriv i tekst/skitse):**
+**Gør sådan:**
 
-* Et felt til navn (Entry), en knap (“Sig hej”), en label der viser svaret.
-* Når knappen trykkes, opdateres label med “Hej, <navn>!”.
-* Layout med **grid**: 2 kolonner (label + felt/knap), skalere pænt vandret.
-* Standardtekst i statusfelt: “Skriv dit navn og tryk Enter.”
-* **Event:** Enter-tast i feltet gør det samme som knappen.
+```python
+status_var = tk.StringVar(value="Tryk på knappen...")
 
-### Øvelse B — Mini-formular med validering (basis)
+title_lbl = ttk.Label(root, text="Velkommen!", font=("Segoe UI", 14))
+status_lbl = ttk.Label(root, textvariable=status_var)
+btn = ttk.Button(root, text="Sig hej", command=lambda: status_var.set("Hej 👋"))
 
-**Formål:** Flere widgets + simpel validering.
-**Krav:**
+title_lbl.pack(pady=8)
+status_lbl.pack(pady=8)
+btn.pack()
+```
 
-* Felter: Fornavn (Entry), Efternavn (Entry), Alder (Entry).
-* Valg: **Radiobuttons** for køn (fx “Andet/M/K”) eller en **OptionMenu**.
-* Knapper: **Gem**, **Nulstil**.
-* Validering: “Alder” skal være tal; fornavn/efternavn må ikke være tomme.
-* Fejl vises som **rød, lille tekst** under det felt der fejler.
-* Statusfelt i bundlinjen (grønt ved succes, rødt ved fejl).
-* Layout med **grid**; felter skal kunne strække sig vandret.
-
-### Øvelse C — Notatblok (udvidet)
-
-**Formål:** Text-widget, menuer og filflow planlægges.
-**Krav:**
-
-* Stort **Text**-område, statuslinje der viser antal tegn.
-* Menulinje (plan): **Fil** → Ny, Åbn…, Gem som…; **Hjælp** → Om…
-* Når tekst ændres, opdateres tælleren i statusfeltet.
-* Åbn/Gem (plan): brug windows fil-dialog; vis filnavn i vinduestitel.
-* Tænk over **tastaturgenveje**: Ctrl+N/O/S og Ctrl+Q (luk).
+**Mini-øvelse:** Skift knapteksten og den tekst, der vises i `status_var`.
 
 ---
 
-## Arbejdsgang i VS Code (konceptuelt)
+## Step 2 — Entry (brugerinput) + Enter-genvej
 
-* Opret **én fil pr. øvelse** i en modulmappe (fx `02_widgets_layout/`).
-* Brug `.venv`-fortolkeren (vælg i statuslinjen).
-* Kør programmet via VS Code (ingen kommandolinje nødvendig for modulet her).
-* Hold strukturen enkel: én **root** (`Tk`), evt. *Frames* for sektioner.
+**Hvad er det?**
 
----
+* **Entry** er ét linjes tekstfelt for input.
+* Du læser/skriver via `StringVar` eller `entry.get()`.
+* **Events**: du kan binde Enter-tasten til en funktion.
 
-## Tjekliste før videre
+**Gør sådan (læg til i samme fil eller i ny fil):**
 
-* [ ] Jeg kan forklare, hvad de nævnte widgets bruges til.
-* [ ] Jeg kan vælge mellem **pack** og **grid** og begrunde valget.
-* [ ] Jeg kan pege på, hvor og hvordan UI skal give **feedback** ved succes/fejl.
-* [ ] Jeg har skitseret layout (rækker/kolonner eller sektioner) for mindst én øvelse.
-* [ ] Jeg ved, hvilke felter der skal valideres og hvordan fejl skal vises.
+```python
+name_var = tk.StringVar()
 
----
+row = ttk.Frame(root)
+row.pack(pady=6)
+ttk.Label(row, text="Dit navn:").pack(side="left", padx=(0,6))
+ttk.Entry(row, textvariable=name_var, width=20).pack(side="left")
 
-## Definition of Done (Modul 02)
+def say_hi():
+    name = name_var.get().strip() or "verdensborger"
+    status_var.set(f"Hej, {name}!")
 
-* Du har en **skriftlig plan** for mindst én af øvelserne (A/B/C), inkl. widgets, layout, events og feedback.
-* Du kan med dine egne ord beskrive **command** og en enkel **event** (fx Enter).
-* Du har besluttet **grid/pack** pr. container og dokumenteret, hvilke elementer der skal **skalere**.
+ttk.Button(root, text="Sig hej", command=say_hi).pack()
 
----
+root.bind("<Return>", lambda e: say_hi())
+```
 
-## Kendte faldgruber
-
-* **Pack vs. grid**: bland dem ikke i **samme** parent.
-* **Mangel på feedback**: brug statuslinje eller nær-felt-fejl — ikke kun popups.
-* **Ikke-skalerende UI**: husk `column/rowconfigure` for de kolonner/rækker der skal vokse.
-* **Uklare labels**: vær konkret og kort.
+**Mini-øvelse:** Sørg for at Enter i feltet også virker (hint: fokus ligger allerede i Entry).
 
 ---
 
-## Estimeret tid
+## Step 3 — `pack` vs. `grid` (layout)
 
-* **60–90 min.** inkl. skitser og planlægning.
+**Hvad er det?**
+
+* **pack**: enkel stabling (top/bund/venstre/højre).
+* **grid**: rækker/kolonner (mest fleksibel i formularer).
+* **VIGTIGT:** bland ikke `pack` og `grid` i **samme parent**.
+
+**grid-eksempel (ny fil er okay):**
+
+```python
+# grid i root
+root.columnconfigure((0,1), weight=1)  # gør kolonner fleksible
+
+ttk.Label(root, text="Fornavn:").grid(row=0, column=0, sticky="e", padx=8, pady=6)
+fn_var = tk.StringVar()
+ttk.Entry(root, textvariable=fn_var).grid(row=0, column=1, sticky="we", padx=8)
+
+ttk.Label(root, text="Efternavn:").grid(row=1, column=0, sticky="e", padx=8, pady=6)
+ln_var = tk.StringVar()
+ttk.Entry(root, textvariable=ln_var).grid(row=1, column=1, sticky="we", padx=8)
+
+msg_var = tk.StringVar(value="Udfyld felter og tryk Gem")
+ttk.Label(root, textvariable=msg_var).grid(row=2, column=0, columnspan=2, pady=(8,0))
+
+def save():
+    msg_var.set(f"Gemte: {fn_var.get()} {ln_var.get()}")
+
+ttk.Button(root, text="Gem", command=save).grid(row=3, column=0, columnspan=2, pady=8)
+```
+
+**Mini-øvelse:** Få felterne til at **strække sig** vandret (du har gjort det med `sticky="we"` og `columnconfigure`).
 
 ---
 
-## Videre til **03 – Input & validering**
+## Step 4 — Valgfelter (Checkbutton, Radiobutton, Dropdown)
 
-Her omsætter du planerne til praksis: Entry/Text, Check/Radios/OptionMenu, status-feedback og første rigtige validering — stadig enkelt og overskueligt.
-*Sig til, hvis du vil have `03` i samme stil (README uden kode) eller med starter-filer.*
+**Hvad er det?**
 
+* **Checkbutton**: sand/falsk (flere kan være slået til samtidig).
+* **Radiobutton**: vælg **én** mulighed i en gruppe.
+* **OptionMenu/ttk.Combobox**: dropdown-valg.
+
+**Snippets (vælg én eller flere):**
+
+```python
+# Checkbutton
+newsletter_var = tk.BooleanVar(value=True)
+ttk.Checkbutton(root, text="Tilmeld nyhedsbrev", variable=newsletter_var).pack(anchor="w", padx=8)
+
+# Radiobuttons (gruppe via samme variable)
+gender_var = tk.StringVar(value="andet")
+for txt, val in [("Andet", "andet"), ("Kvinde", "k"), ("Mand", "m")]:
+    ttk.Radiobutton(root, text=txt, value=val, variable=gender_var).pack(anchor="w", padx=8)
+
+# Dropdown (OptionMenu)
+color_var = tk.StringVar(value="Blå")
+ttk.Label(root, text="Farve:").pack(anchor="w", padx=8)
+ttk.OptionMenu(root, color_var, color_var.get(), "Blå", "Rød", "Grøn").pack(anchor="w", padx=8)
+```
+
+**Mini-øvelse:** Vis i `status_var`, hvad der er valgt, når du trykker en “OK”-knap.
+
+---
+
+## Step 5 — Text + Scrollbar (notatfelt)
+
+**Hvad er det?**
+
+* **Text** er et multilinje-område til længere tekst.
+* Scrollbar kobles på via `yscrollcommand`/`command`.
+
+```python
+text = tk.Text(root, height=6, wrap="word")
+scroll = ttk.Scrollbar(root, orient="vertical", command=text.yview)
+text.configure(yscrollcommand=scroll.set)
+
+text.grid(row=0, column=0, sticky="nsew", padx=(8,0), pady=8)
+scroll.grid(row=0, column=1, sticky="ns", pady=8)
+root.rowconfigure(0, weight=1)   # gør rækken fleksibel
+root.columnconfigure(0, weight=1)
+```
+
+**Mini-øvelse:** Skriv antal tegn i en status-label, når brugeren skriver (hint: `<KeyRelease>` event).
+
+---
+
+## Step 6 — Frame (gruppering)
+
+**Hvad er det?**
+
+* **Frame** er en container til at samle widgets og styre layout i sektioner.
+
+```python
+form = ttk.Frame(root, padding=8)
+form.pack(fill="x")
+
+ttk.Label(form, text="Email:").grid(row=0, column=0, sticky="e", padx=6, pady=4)
+email_var = tk.StringVar()
+ttk.Entry(form, textvariable=email_var).grid(row=0, column=1, sticky="we", padx=6, pady=4)
+form.columnconfigure(1, weight=1)
+```
+
+**Mini-øvelse:** Lav en **form-frame** og en **status-frame** (bundlinje).
+
+---
+
+## Step 7 — Canvas (tegneflade)
+
+**Hvad er det?**
+
+* **Canvas** er en flade, hvor du kan **tegne** (linjer, rektangler, tekst, billeder).
+* Bruges til simple grafikker, baggrunde, diagrammer, custom widgets.
+
+```python
+canvas = tk.Canvas(root, width=200, height=120, background="#f5f5f5", highlightthickness=0)
+canvas.pack(pady=8)
+canvas.create_rectangle(20, 20, 180, 100, fill="#cfe8ff", outline="#2b6cb0")
+canvas.create_text(100, 60, text="Canvas", font=("Segoe UI", 12))
+```
+
+**Mini-øvelse:** Tegn en cirkel og skriv tekst i midten.
+
+---
+
+## Ordliste (hurtigt opslagsværk)
+
+* **Label:** viser tekst/billede.
+* **Button:** udfører en funktion via `command=`.
+* **Entry:** ét linjes inputfelt (brug `StringVar`/`.get()`).
+* **Text:** multilinje tekstområde (kan have scrollbar).
+* **Checkbutton / Radiobutton:** afkrydsning / eksklusivt valg.
+* **OptionMenu / Combobox:** dropdown-valg.
+* **Frame:** container til at gruppere widgets og styre layout.
+* **Canvas:** tegneflade til figurer/tekst/billeder.
+* **Menu:** menulinje (Fil/Hjælp) – kommer i et senere modul.
+* **Toplevel:** ekstra vindue ud over hovedvinduet.
+* **ttk:** “tema-widgets” (pænere, mere konsistente).
+* **StringVar/IntVar/BooleanVar:** binder data mellem din kode og widgets.
+* **pack / grid / place:** layoutsystemer (brug `grid` til formularer).
+* **event / event-loop:** hændelser (klik/tastning) og det loop, der holder GUI’en “i live”.
+
+---
+
+## Kendte faldgruber (og hvordan du undgår dem)
+
+* **Mix af layout:** bland aldrig `pack` og `grid` i **samme parent**.
+* **Ikke-skalerende felter:** husk `columnconfigure`/`rowconfigure` og `sticky="we"`/`"nsew"`.
+* **Stille UI:** vis **feedback** i en label i bunden (succes/fejl).
+* **Langvarigt arbejde:** blokér ikke GUI (ingen `sleep()` i main-tråd).
+
+---
+
+## Definition of Done (for 02)
+
+* Du har **kørt** mindst ét mini-eksempel (Label+Button+Entry).
+* Du har **valgt** et layout (pack eller grid) og fået felter til at **skalere**.
+* Du kan forklare forskellen på Entry vs. Text, og hvornår du bruger Canvas.
+* Du har skitseret en **mini-app** (widgets + layout + events) klar til næste modul.
