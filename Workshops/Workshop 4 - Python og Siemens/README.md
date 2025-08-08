@@ -8,12 +8,12 @@ Denne workshop lærer dig at tale med en **Siemens S7-PLC** fra **Python** via `
 
 ## 🎯 Hvad du lærer i denne workshop
 
-✔️ Installation og brug af **python-snap7** på Windows
-✔️ Køre en **lokal “fake” PLC** (snap7 server) og øve sikkert uden udstyr
-✔️ **Læsning** (db\_read) og **skrivning** (db\_write) af DB-data
-✔️ Mapping af **bytes → INT/DINT/REAL/BOOL** (og tilbage) + dataclass-model
-✔️ **Logning** af måleværdier til CSV (valgfrit: simpel visualisering)
-✔️ **Fejlhåndtering** (timeouts, reconnect) og tjekliste til **rigtig PLC**
+✔️ Installation og brug af **python-snap7** på Windows  
+✔️ Køre en **lokal “fake” PLC** (snap7 server) og øve sikkert uden udstyr  
+✔️ **Læsning** (db\_read) og **skrivning** (db\_write) af DB-data  
+✔️ Mapping af **bytes → INT/DINT/REAL/BOOL** (og tilbage) + dataclass-model  
+✔️ **Logning** af måleværdier til CSV (valgfrit: simpel visualisering)  
+✔️ **Fejlhåndtering** (timeouts, reconnect) og tjekliste til **rigtig PLC**  
 
 ---
 
